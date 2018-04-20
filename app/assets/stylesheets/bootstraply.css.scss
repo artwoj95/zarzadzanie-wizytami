@@ -1,0 +1,49 @@
+.container {
+    width: 50%;
+}
+
+.center {
+    line-height: 60vh;
+    height: 40vh;
+    text-align: center;
+}
+
+* {
+    /* personal preference */
+    margin: 0;
+    padding: 5px;
+}
+html {
+    /* make sure we use up the whole viewport */
+    width: 100%;
+    min-height: 100vh;
+    /* for debugging, a red background lets us see any seams */
+
+}
+body {
+    /* make sure we use the full width but allow for more height */
+    width: 100%;
+    min-height: calc(100vh - 5em); /* this helps with the sticky footer */
+}
+main {
+    /* for debugging, a blue background lets us see the content */
+    background-color: skyblue;
+	min-height: calc(100vh - 12em); /* this leaves space for the sticky footer */
+    width: 110%;
+}
+footer {
+    /* for debugging, a gray background lets us see the footer */
+    background-color: skyblue;
+	min-height:2.5em;
+}
+$navbar-default-bg: #0041a0;
+$panel-bg: skyblue;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+
+

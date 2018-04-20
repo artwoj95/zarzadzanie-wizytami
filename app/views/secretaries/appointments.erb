@@ -1,0 +1,39 @@
+<main>
+  <div class="panel panel-default">
+  <div class="panel-heading"><%= @status %> appointments</div>
+    <div class="panel-body">
+
+    <table class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>Purpose</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Employee</th>
+          <th>Customer</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <% @appointments.order(:appointment_date, :appointment_time, :purpose).each do |appointment| %>
+            <tr>
+              <td><%= appointment.purpose %></td>
+              <td><%= appointment.appointment_date %></td>
+              <td><%= appointment.appointment_time %></td>
+              <td><%= @employee_name[appointment.id] %></td>
+              <td><%= @customer_name[appointment.id]%></td>
+              <td><%= link_to 'Show', appointment_path(appointment, status: @status), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Calendar', secretary_calendar_path(@secretary, status: @status), class: "btn btn-primary" %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to "Main page", root_path %>
+  </div>
+</div>
+</main>
+
+

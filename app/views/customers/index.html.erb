@@ -1,0 +1,11 @@
+<main class="center">
+	<% if @user.try(:customer) && @user.customer? %>
+		<%= link_to 'Edit profile', edit_customer_path(@customer), class: "btn btn-primary" %>
+		<%= link_to 'Search employee', customer_search_path(@customer), class: "btn btn-primary"%>
+		<%= link_to 'View yours appointments', appointments_path, class: "btn btn-primary"%>
+	<% elsif @user.customer? %>
+		<%= link_to 'Finish profile', new_customer_path, class: "btn btn-primary" %>
+	<% end %>
+	<%= link_to 'Edit account', edit_user_registration_path, class: "btn btn-primary" %>
+	<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+</main>

@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Appointment</div>
+  <div class="panel-body">
+  <b>From:</b> <%= @customer_user.first_name %> <%= @customer_user.last_name %> </br>
+  <b>To:</b> <%= @employee_user.first_name %> <%= @employee_user.last_name %> </br>
+  <b>Purpose:</b> <%= @appointment.purpose %> </br>
+  <b>Extra information:</b> <%= @appointment.extra %> </br>
+  <b>Date:</b> <%= @appointment.appointment_date %> </br>
+  <b>Time:</b> <%= @appointment.appointment_time %> </br>
+  <% if !@appointment.confirmation && (current_user.secretary? || current_user.admin? || current_user.employee? ) %>
+    <%= link_to 'Accept', appointment_accept_path(@appointment, status: @status),data: { confirm: "Are you sure?" } , class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to 'Decline', appointment_path(@appointment, status: @status), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-primary" %>
+  </br>
+  <%= link_to 'Back', go_back(current_user, @status) %>
+  </div>
+</div>

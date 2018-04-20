@@ -1,0 +1,36 @@
+<main>
+  <div class="panel panel-default">
+  <div class="panel-heading">Working hours</div>
+  <div class="panel-body">
+
+    <table class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Open</th>
+          <th>Close</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <% unless @hours.blank? %>
+          <% @hours.order(:lp).each do |hour| %>
+            <tr>
+              <td><%= hour.day.capitalize %></td>
+              <td><%= hour.start_hour %></td>
+              <td><%= hour.end_hour %></td>
+              <td><%= link_to 'Edit', edit_employee_working_hour_path(@employee, hour), class: "btn btn-primary" %></td>
+              <td><%= link_to "Destroy", employee_working_hour_path(@employee ,hour), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New day', new_employee_working_hour_path(@employee), class: "btn btn-primary" %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to "Main page", root_path %>
+  </div>
+</div>
+</main>

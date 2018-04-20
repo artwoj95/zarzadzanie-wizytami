@@ -1,0 +1,11 @@
+<main class="center">
+  <% if @user.try(:employee) && @user.employee? %>
+    <%= link_to 'Edit profile', edit_employee_path(@employee), class: "btn btn-primary" %>
+    <%= link_to 'Working hours', employee_working_hours_path(@employee), class: "btn btn-primary" %>
+    <%= link_to 'Your appointments',employee_appointment_path(@employee), class: "btn btn-primary" %>
+  <% elsif @user.employee? %>
+    <%= link_to 'Finish profile', new_employee_path, class: "btn btn-primary" %>
+  <%end%>
+  <%= link_to 'Edit account', edit_user_registration_path, class: "btn btn-primary" %>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+</main>

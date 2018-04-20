@@ -1,0 +1,30 @@
+<main>	
+	<div class="panel panel-default">
+		<div class="panel-heading">Choose date</div>
+
+		<%= form_for @appointment, url: new_employee_appointment_path(@employee, @appointment), method: :get do |f| %>
+			  <div class="form-group">
+			    <%= f.label :appointment_date, "Appointment date" %><br>
+			    <%= f.date_field :appointment_date %>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit @appointment.persisted? ? "Update" : "Next", class: "btn btn-primary" %>
+			  </div>
+			</div>
+
+			<% if @appointment.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this bot from being saved:</h2>
+			      <ul>
+			      <% @appointment.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			<% end %>
+		<% end %>
+
+
+	<div class="panel-footer"><%= link_to 'Back', root_path %></div>
+	</div>
+</main>

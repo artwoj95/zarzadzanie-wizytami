@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lp: 1
+  day: MyString
+  start_hour: MyString
+  end_hour: MyString
+
+two:
+  lp: 1
+  day: MyString
+  start_hour: MyString
+  end_hour: MyString

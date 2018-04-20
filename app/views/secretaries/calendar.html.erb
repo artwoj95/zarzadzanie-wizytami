@@ -1,0 +1,6 @@
+<main>
+	<div class="calendar" data-path="<%= secretary_calendar_path(@secretary, status: @status) %>"></div>
+	<div class="panel-footer">
+    <%= link_to "Main page", root_path %>||<%= link_to "Back", secretary_appointments_path(@secretary, status: @status) %>
+  </div>
+</main>

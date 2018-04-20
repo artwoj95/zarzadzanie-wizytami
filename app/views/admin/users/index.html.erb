@@ -1,0 +1,8 @@
+<main class="center">
+	<% if user_signed_in?%>
+		<%= link_to 'Users', admin_user_user_list_path(@user), class: "btn btn-primary" %>
+		<%= link_to 'Edit account', edit_user_registration_path, class: "btn btn-primary" %>
+		<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+	<% end %>
+</main>
+

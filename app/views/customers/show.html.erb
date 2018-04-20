@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Customer <%= first_name?(@customer) %> <%= last_name?(@customer) %></div>
+  <div class="panel-body">
+  <b>First name:</b> <%= @user.first_name %> </br>
+  <b>To:</b> <%= @user.last_name %> </br>
+  <b>E-mail:</b> <%= @user.email %> </br>
+  <b>Telephone number:</b> <%= @customer.telephone_number %> </br>
+  <b>City:</b> <%= @customer.city %> </br>
+  <b>Pesel:</b> <%= @customer.pesel %> </br>
+  <%= link_to 'Back', admin_user_user_list_path(@admin) %>
+  </div>
+</div>

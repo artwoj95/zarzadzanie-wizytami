@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Secretary <%= first_name?(@secretary) %> <%= last_name?(@secretary) %></div>
+  <div class="panel-body">
+  <b>First name:</b> <%= first_name?(@secretary) %> </br>
+  <b>To:</b> <%= last_name?(@secretary) %> </br>
+  <b>E-mail:</b> <%= @user.email %> </br>
+  <b>Telephone number:</b> <%= @secretary.telephone_number %> </br>
+  <%= link_to 'Back', admin_user_user_list_path(@admin) %>
+  </div>
+</div>
