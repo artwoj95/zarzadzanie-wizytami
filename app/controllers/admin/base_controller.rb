@@ -4,6 +4,7 @@ module Admin
 
 		def index
 			
+			
 		end
 
 		private
