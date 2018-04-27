@@ -4,7 +4,7 @@ class AppointmentsController < ApplicationController
   
   def index
    @customer = @user.customer
-   @appointments = @user.appointments
+   @appointments = @user.appointments.paginate(:page => params[:page],:per_page => 1)
    @employee_name = {"appid" => "fullname"}
    @appointments.each do |appointment|
       @employee = User.find(Employee.find(appointment.employee_id).user_id)
